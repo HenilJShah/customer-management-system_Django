@@ -1,0 +1,39 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+
+            <form action="" method="POST">
+                {{formset.management_form}}
+                {% csrf_token %}
+                {% for froms in formset %}
+                <table class="table table-hover table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Status</th>
+                            <!-- <th scope="col">Delete</th> -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{froms.Product}}</td>
+                            <td>{{froms.status}}</td>
+                            <!-- <td>{{froms.Delete}}</td> -->
+                        </tr>
+                    </tbody>
+                </table>
+
+                <hr>
+                {% endfor %}
+                <input type="submit" name="Submit">
+            </form>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content  %}

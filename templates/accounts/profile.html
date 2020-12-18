@@ -1,0 +1,15 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+<!-- <form action="" method = 'POST'>
+{{do}}
+<a type="submit" name = 'submit'>submit</a>
+</form> -->
+
+<form action="" method="POST">
+{% csrf_token %}
+<!-- as_p means <p></p> -->
+    {{do.as_p}}
+    <input type="submit" name="Submit">
+</form>
+
+{% endblock content%}

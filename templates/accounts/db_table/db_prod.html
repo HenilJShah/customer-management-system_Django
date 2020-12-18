@@ -1,0 +1,32 @@
+{% extends 'accounts/main.html' %}
+{% block content %}
+
+<!-- order table -->
+<div class="container my-5">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">prod_Name</th>
+                <th scope="col">prod_price</th>
+                <th scope="col">prod_category</th>
+                <th scope="col">prod_desc</th>
+                <th scope="col">date_create</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for dt in data %}
+            <tr>
+                <th scope="row">{{dt.id}}</th>
+                <td>{{dt.prod_Name}}</td>
+                <td>{{dt.prod_price}}</td>
+                <td>{{dt.prod_category}}</td>
+                <td>{{dt.prod_desc}}</td>
+                <td>{{dt.date_create}}</td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+
+
+{% endblock content %}
